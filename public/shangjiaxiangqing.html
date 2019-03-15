@@ -58,24 +58,84 @@
                <div class="imgsss "><img src="./image/daowayApp.png" alt=""></div>
             </div>
        </header>
-    <div id="content_wrap ">
-        <div class="fuwulist">
-        <h2 class="h2 clearfloat">服务商</h2>
-        <div class="center_left">
-            <div class="tab_left">
-                <ul class="tab_list">
-                    
-                </ul>
-            </div>
+       <div class="title">
+            <div class="title_content">
+                    <div class="title_content_left">
+                      <b>云家证</b>
+                      <i>营业时间:<em>12：00</em></i>
+                      <i>最近可预约时间:<em>9：00</em></i>
+                    </div>
+                    <div class="title_content_right">
+                      <ul>
+                        <li>
+                          <i>2312</i>
+                          <span>成功接单</span>
+                          <em>|</em>
+                        </li>
+                        <li>
+                          <i>32</i>
+                          <span>接单率</span>
+                          <em>|</em>
+                        </li>
+                        <li>
+                          <i>44</i>
+                          <span>好评率</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
         </div>
-        <div class="center_right">
-                <img src="./image/tuijianfuwushang_03.jpg" width="230" height="auto">
-                <div class="right_img">
-                  <img src="./image/daowayApp.png" width="130" height="auto">
-                </div>
-              </div>
-    </div>
-    </div>
+        <div class="nav_list1">
+          <ul>
+            <li class="active">
+              <a href="javascript:;">服务项目</a>
+            </li>
+            <li>
+              <a href="javascript:;">商家简介</a>
+            </li>
+            <li>
+              <a href="javascript:;">用户评论</a>
+            </li>
+          </ul>
+        </div>
+        <div class="content">
+          <div class="content_left">
+            <h3>
+              <span>服务项目</span>
+            </h3>
+            <div class="box_tab" onclick="goDetail()">
+        
+            </div>
+            <div class="blank_1"></div>
+            <h3>
+              <span>商家简介</span>
+            </h3>
+            <div class="company">
+              上海家谐网络科技有限公司
+              <img src="./image/renzheng.jpg" alt="">
+            </div>
+            <p id="profile">
+              云家政是家政服务在线预订平台。我们的目标是让每个家庭都能获得诚信、便捷、有保障的家政服务。云家政拥有国内最大的实名认证家庭服务员数据库，目前平台上有超过100000名专业服务人员；数百个家政服务商，遍布全国主要城市各个社区。
+              云家政倡导简单、轻松的生活方式。通过把分散的家政服务能力汇集和分配，让中国家庭获得诚信、便捷、有保障的家政服务，解决日常生活中的麻烦事，把更多时间留给自己和家人，提高生活品质。
+            </p>
+            <div style="width: 100%; border-top: 10px solid #f8f8f8"></div>
+            <h3 id="commentCount">
+        
+            </h3>
+            <div id="commentDiv">
+        
+            </div>
+            
+          </div>
+          <div class="content_right">
+            <div class="right_top">
+              <img src="./image/daowayApp.png" alt="">
+            </div>
+            <div class="right_bottom">
+              <img src="./image/daowayApp.png" alt="">
+            </div>
+          </div>
+        </div>
   
     <!-- 主体内容 -->
     <div class="baozhang">
@@ -159,32 +219,5 @@
                     <p>©2015 版权所有 到位 daoway.com 京ICP备15001471号-1 北京邻家科技有限公司</p>
                   </div>
     </body>
-    <script id="shangjia" type="text/html">
-        {{each data}}
-            <li id={{$value.id}} onclick="goFacilitator(id)">
-                <img src={{$value.imgUrl}} alt="">
-                <p class="p1">
-                  <span class="iconfont icon-shouye"></span>
-                  <span>{{$value.title}}</span>
-                </p>
-                <p class="p2">
-                  已接单{{$value.orderCount}}单
-                  <i>好评{{$value.positiveRate}}</i>
-                </p>
-              </li>
-        {{/each}}
-    </script>
-        <script type="text/javascript">
-            $(function () {
-              $.get('http://localhost:3000/shangjia',function (data) {
-                  console.log(data);
-                $('.tab_list').html(template('shangjia',{data:data}))
-              }) 
-            });
-            function goFacilitator(id) {
-                    window.location.href = './shangjiaxiangqing.html?serviceId='+id;
-                    /*open('./facilitator.html','_parent')*/
-                }
-          </script>
-          
+   
 </html>

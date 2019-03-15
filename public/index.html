@@ -235,7 +235,7 @@
         <script type="text/javascript">
             $(function () {
               $.get('http://localhost:3000/users',function (data) {
-                  console.log(data);
+          
                 $('.ul1').html(template('temp1',{data:data})) 
                 $('#content_wrap').html(template('temp2',{data:data}))
               }) 
